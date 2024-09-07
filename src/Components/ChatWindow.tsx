@@ -1,4 +1,4 @@
-import { child, get, ref, set, onChildAdded } from "firebase/database";
+import { child, get, ref, set, } from "firebase/database";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { auth, database } from "../firebase";
@@ -102,25 +102,9 @@ const ChatWindow: React.FC = () => {
         console.error(error);
       });
   };
-  type Item = {
-    id: string;
-    [key: string]: any; // Boshqa xususiyatlar
-  };
 
-  function filterUniqueById(items: any): any {
-    // `id` qiymatlarini saqlash uchun to'plam
-    const seenIds = new Set<string>();
 
-    return items.filter((item: any) => {
-      // Agar `id` oldinroq ko'rilgan bo'lsa, uni filtrlashdan o'tkazamiz
-      if (seenIds.has(item.id)) {
-        return false;
-      }
-      // Aks holda, yangi `id` qo'shamiz va obyektni saqlaymiz
-      seenIds.add(item.id);
-      return true;
-    });
-  }
+
 
   useEffect(() => {
     if (ID) {

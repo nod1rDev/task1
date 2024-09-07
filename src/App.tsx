@@ -6,9 +6,7 @@ import Home from "./Components/Home";
 import Protected from "./Components/Protected";
 import { Provider } from "react-redux";
 import { store } from "./store";
-import { signOut } from "firebase/auth";
-import { auth, database } from "./firebase";
-import { ref, update } from "firebase/database";
+
 
 const App: React.FC = () => {
   
